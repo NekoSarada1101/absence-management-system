@@ -10,7 +10,7 @@
 <h1>公欠管理システム</h1>
 
 <h2>学生ログイン</h2>
-<form action="Auth" method="post">
+<form action="auth" method="post">
     <input type="text" name="id">
     <input type="password" name="password">
 

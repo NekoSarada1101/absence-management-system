@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/Auth")
+@WebServlet("/auth")
 public class AuthServlet extends HttpServlet {
 
     @Override
@@ -27,9 +27,9 @@ public class AuthServlet extends HttpServlet {
         HttpSession session = request.getSession();
         if (loginInfo != null) {
             session.setAttribute("loginInfo", loginInfo);
-            request.getRequestDispatcher("Menu").forward(request, response);
+            request.getRequestDispatcher("menu").forward(request, response);
         } else {
-            request.getRequestDispatcher("Login").forward(request, response);
+            request.getRequestDispatcher("login").forward(request, response);
         }
 
     }
