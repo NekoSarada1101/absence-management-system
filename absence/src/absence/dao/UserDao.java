@@ -7,15 +7,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDao extends DaoBase {
-    LoginInfoBeans loginInfo = null;
-    PreparedStatement stmt = null;
-    ResultSet rs = null;
-
-
     public LoginInfoBeans getby(String userId, String password) {
+        LoginInfoBeans loginInfo = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
         try {
             this.connect();
-            stmt = con.prepareStatement("SELECT * FROM students WHERE student_id = ? AND password = ?");
+            stmt = con.prepareStatement("SELECT * FROM students WHERE student_id = ? AND student_password = ?");
             stmt.setString(1, userId);
             stmt.setString(2, password);
 
@@ -28,6 +27,7 @@ public class UserDao extends DaoBase {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            return null;
         } finally {
             try {
                 this.close();

@@ -27,9 +27,9 @@ public class AuthServlet extends HttpServlet {
         HttpSession session = request.getSession();
         if (loginInfo != null) {
             session.setAttribute("loginInfo", loginInfo);
-            request.getRequestDispatcher("menu").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/jsp/menu.jsp").forward(request, response);
         } else {
-            request.getRequestDispatcher("login").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/jsp/login.jsp").forward(request, response);
         }
 
     }

@@ -1,7 +1,33 @@
 package absence.servlet;
 
-import javax.servlet.http.HttpServlet;
+import absence.beans.AbsenceBeans;
+import absence.beans.LoginInfoBeans;
+import absence.dao.AbsenceDao;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+@WebServlet("/dispabsencelist")
 public class DispAbsenceListServlet extends HttpServlet {
 
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        HttpSession session = request.getSession();
+        String userId = ((LoginInfoBeans) session.getAttribute("loginInfo")).getUserId();
+
+        List<AbsenceBeans> list = new ArrayList<>();
+        AbsenceDao absenceDao = new AbsenceDao();
+
+        list = absenceDao.getList(userId);
+
+        session.setAttribute("list", list);
+        request.getRequestDispatcher("WEB-INF/jsp/list.jsp").forward(request, response);
+    }
 }
