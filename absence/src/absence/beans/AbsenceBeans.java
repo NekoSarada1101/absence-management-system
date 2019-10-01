@@ -1,12 +1,16 @@
 package absence.beans;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 public class AbsenceBeans implements Serializable {
     private String userId = null;
-    private String absenceDate = null;
+    private Date absenceDate = null;
     private String companyName = null;
     private String reason = null;
+
+    public AbsenceBeans() {
+    }
 
     public String getUserId() {
         return userId;
@@ -16,11 +20,11 @@ public class AbsenceBeans implements Serializable {
         this.userId = userId;
     }
 
-    public String getAbsenceDate() {
+    public Date getAbsenceDate() {
         return absenceDate;
     }
 
-    public void setAbsenceDate(String absenceDate) {
+    public void setAbsenceDate(Date absenceDate) {
         this.absenceDate = absenceDate;
     }
 

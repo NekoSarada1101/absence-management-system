@@ -11,7 +11,7 @@
     <input type="submit" value="公欠履歴表示">
 </form>
 
-<form action="" method="get">
+<form action="inputabsenceresist" method="get">
     <input type="submit" value="新規作成">
 </form>
 

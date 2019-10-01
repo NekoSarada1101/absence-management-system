@@ -7,11 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/menu")
-public class MenuServlet extends HttpServlet {
+@WebServlet("/inputabsenceresist")
+public class InputAbsenceResistServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.getRequestDispatcher("WEB-INF/jsp/menu.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/jsp/inputabsenceresist.jsp").forward(request, response);
     }
 }

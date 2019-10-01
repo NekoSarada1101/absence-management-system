@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet("/dispabsencelist")
@@ -22,12 +21,11 @@ public class DispAbsenceListServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String userId = ((LoginInfoBeans) session.getAttribute("loginInfo")).getUserId();
 
-        List<AbsenceBeans> list = new ArrayList<>();
         AbsenceDao absenceDao = new AbsenceDao();
 
-        list = absenceDao.getList(userId);
+        List<AbsenceBeans> list = absenceDao.getList(userId);
 
         session.setAttribute("list", list);
-        request.getRequestDispatcher("WEB-INF/jsp/list.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/jsp/absencelist.jsp").forward(request, response);
     }
 }

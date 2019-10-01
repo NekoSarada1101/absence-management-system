@@ -20,17 +20,14 @@ public class AuthServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         UserDao userDao = new UserDao();
-        LoginInfoBeans loginInfo = new LoginInfoBeans();
-
-        loginInfo = userDao.getby(studentId, password);
+        LoginInfoBeans loginInfo = userDao.getby(studentId, password);
 
         HttpSession session = request.getSession();
         if (loginInfo != null) {
             session.setAttribute("loginInfo", loginInfo);
-            request.getRequestDispatcher("WEB-INF/jsp/menu.jsp").forward(request, response);
+            response.sendRedirect("menu");
         } else {
-            request.getRequestDispatcher("WEB-INF/jsp/login.jsp").forward(request, response);
+            response.sendRedirect("login");
         }
-
     }
 }

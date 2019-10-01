@@ -15,7 +15,7 @@ public class AbsenceDao extends DaoBase {
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
-        List<AbsenceBeans> list = new ArrayList<>();
+        List<AbsenceBeans> list = null;
 
         try {
             this.connect();
@@ -23,11 +23,13 @@ public class AbsenceDao extends DaoBase {
             stmt.setString(1, userId);
             rs = stmt.executeQuery();
 
+            list = new ArrayList<>();
+
             while (rs.next()) {
                 absenceBeans = new AbsenceBeans();
                 absenceBeans.setUserId(rs.getString("student_id"));
                 absenceBeans.setCompanyName(rs.getString("company_name"));
-                absenceBeans.setAbsenceDate(rs.getString("absence_date"));
+                absenceBeans.setAbsenceDate(rs.getDate("absence_date"));
                 absenceBeans.setReason(rs.getString("reason"));
                 list.add(absenceBeans);
             }
@@ -42,5 +44,30 @@ public class AbsenceDao extends DaoBase {
             }
         }
         return list;
+    }
+
+    public boolean insert(AbsenceBeans absenceBeans) {
+        PreparedStatement stmt = null;
+
+        try {
+            this.connect();
+            stmt = con.prepareStatement("INSERT INTO absences (student_id, absence_date, company_name, reason) VALUES (?, ?, ?, ?)");
+            stmt.setString(1, absenceBeans.getUserId());
+            stmt.setDate(2, absenceBeans.getAbsenceDate());
+            stmt.setString(3, absenceBeans.getCompanyName());
+            stmt.setString(4, absenceBeans.getReason());
+            stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                this.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return true;
     }
 }
