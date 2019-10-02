@@ -7,6 +7,8 @@
     <title>登録完了</title>
 </head>
 <body>
+<%@include file="/WEB-INF/jsp/mypage.jsp" %>
+
 <h2>公欠登録完了</h2>
 <p>公欠届を提出しました</p>
 <form action="menu" method="get">

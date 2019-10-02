@@ -7,6 +7,8 @@
     <title>メニュー</title>
 </head>
 <body>
+<%@include file="/WEB-INF/jsp/mypage.jsp" %>
+
 <form action="dispabsencelist" method="post">
     <input type="submit" value="公欠履歴表示">
 </form>

@@ -1,7 +1,6 @@
 <%@ page import="absence.beans.AbsenceBeans" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.sql.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%
@@ -14,6 +13,8 @@
     <title>公欠履歴</title>
 </head>
 <body>
+<%@include file="/WEB-INF/jsp/mypage.jsp" %>
+
 <h2>公欠履歴</h2>
 <table>
     <thead>
@@ -24,11 +25,14 @@
     </tr>
     </thead>
     <tbody>
-    <%for(AbsenceBeans bean : list){%>
+    <%for (AbsenceBeans bean : list) {%>
     <tr>
-        <td><%=bean.getAbsenceDate().toString()%></td>
-        <td><%=bean.getCompanyName()%></td>
-        <td><%=bean.getReason()%></td>
+        <td><%=bean.getAbsenceDate().toString()%>
+        </td>
+        <td><%=bean.getCompanyName()%>
+        </td>
+        <td><%=bean.getReason()%>
+        </td>
     </tr>
     <%}%>
     </tbody>

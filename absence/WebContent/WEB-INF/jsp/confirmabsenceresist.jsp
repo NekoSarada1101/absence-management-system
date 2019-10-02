@@ -12,6 +12,8 @@
     <title>登録確認</title>
 </head>
 <body>
+<%@include file="/WEB-INF/jsp/mypage.jsp" %>
+
 <h2>公欠登録確認</h2>
 <p>以下の情報で登録しますか？</p>
 <p>公欠日<%=(absenceBeans.getAbsenceDate()).toString()%>

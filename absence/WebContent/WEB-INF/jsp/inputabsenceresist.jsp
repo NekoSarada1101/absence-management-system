@@ -7,6 +7,8 @@
     <title>登録</title>
 </head>
 <body>
+<%@include file="/WEB-INF/jsp/mypage.jsp" %>
+
 <h2>公欠登録</h2>
 <form action="confirmabsenceresist" method="post">
     <p>公欠年月日
