@@ -28,6 +28,8 @@ public class InsertAbsenceResistServlet extends HttpServlet {
         AbsenceDao absenceDao = new AbsenceDao();
         boolean success = absenceDao.insert(absenceBeans);
 
+
+
         session.removeAttribute("absenceBeans");
         response.sendRedirect("completeabsenceresist");
 

@@ -29,7 +29,7 @@ public class AbsenceDao extends DaoBase {
                 absenceBeans = new AbsenceBeans();
                 absenceBeans.setUserId(rs.getString("student_id"));
                 absenceBeans.setCompanyName(rs.getString("company_name"));
-                absenceBeans.setAbsenceDate(rs.getDate("absence_date"));
+                absenceBeans.setAbsenceDate((rs.getString("absence_date")));
                 absenceBeans.setReason(rs.getString("reason"));
                 list.add(absenceBeans);
             }
@@ -53,7 +53,7 @@ public class AbsenceDao extends DaoBase {
             this.connect();
             stmt = con.prepareStatement("INSERT INTO absences (student_id, absence_date, company_name, reason) VALUES (?, ?, ?, ?)");
             stmt.setString(1, absenceBeans.getUserId());
-            stmt.setDate(2, absenceBeans.getAbsenceDate());
+            stmt.setString(2, absenceBeans.getAbsenceDate());
             stmt.setString(3, absenceBeans.getCompanyName());
             stmt.setString(4, absenceBeans.getReason());
             stmt.executeUpdate();

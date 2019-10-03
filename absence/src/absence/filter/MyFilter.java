@@ -15,13 +15,13 @@ import javax.servlet.annotation.WebFilter;
  * Servlet Filter implementation class filterEX
  */
 @WebFilter("/*")
-public class filterEX implements Filter {
+public class MyFilter implements Filter {
     private String encoding = "UTF-8";
 
     /**
      * Default constructor.
      */
-    public filterEX() {
+    public MyFilter() {
         // TODO Auto-generated constructor stub
     }
 

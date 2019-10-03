@@ -27,7 +27,7 @@
     <tbody>
     <%for (AbsenceBeans bean : list) {%>
     <tr>
-        <td><%=bean.getAbsenceDate().toString()%>
+        <td><%=bean.getAbsenceDate()%>
         </td>
         <td><%=bean.getCompanyName()%>
         </td>

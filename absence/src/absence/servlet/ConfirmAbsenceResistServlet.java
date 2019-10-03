@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.Date;
 
 @WebServlet("/confirmabsenceresist")
 public class ConfirmAbsenceResistServlet extends HttpServlet {
@@ -22,13 +21,11 @@ public class ConfirmAbsenceResistServlet extends HttpServlet {
         String companyName = request.getParameter("name");
         String reason = request.getParameter("reason");
 
-        Date absenceDate = Date.valueOf(date);
-
         HttpSession session = request.getSession();
         String userId = ((LoginInfoBeans) session.getAttribute("loginInfo")).getUserId();
 
         absenceBeans.setUserId(userId);
-        absenceBeans.setAbsenceDate(absenceDate);
+        absenceBeans.setAbsenceDate(date);
         absenceBeans.setCompanyName(companyName);
         absenceBeans.setReason(reason);
 

@@ -9,16 +9,37 @@
 <body>
 <%@include file="/WEB-INF/jsp/mypage.jsp" %>
 
-<h2>公欠登録</h2>
-<form action="confirmabsenceresist" method="post">
-    <p>公欠年月日
-        <input type="date" value="2019-10-11" name="date"></p>
-    <p>企業名<input type="text" name="name"></p>
-    <p>理由<input type="text" name="reason"></p>
-    <p><input type="submit" value="登録"></p>
-</form>
-<form action="menu" method="post">
-    <input type="submit" value="戻る">
-</form>
+<div class="container p-0">
+    <article class="border rounded col-lg-6 col-md-8 col-sm-10 col-10 mr-auto ml-auto">
+        <h4 class="text-center mt-2 mb-4">公欠登録</h4>
+
+        <form action="confirmabsenceresist" method="post">
+            <div class="md-form col-8 mr-auto ml-auto p-0">
+                <input type="date" value="2019-01-01" id="form3" class="form-control" name="date" autofocus required>
+                <label for="form3">公欠年月日</label>
+            </div>
+
+            <div class="md-form col-8 mr-auto ml-auto p-0">
+                <input type="tel" id="form4" class="form-control" maxlength="100" name="name" required>
+                <label for="form4">企業名</label>
+            </div>
+
+            <div class="md-form col-8 mr-auto ml-auto p-0">
+                <textarea id="form5" class="md-textarea form-control" maxlength="200" name="reason" required></textarea>
+                <label for="form5">理由</label>
+            </div>
+
+            <div class="col-8 text-center mr-auto ml-auto mb-4">
+                <button class="btn btn-primary" type="submit">登録</button>
+            </div>
+        </form>
+
+        <form action="menu" method="get">
+            <div class="co-2 text-right mb-4">
+                <button class="btn btn-outline-warning waves-effect" type="submit">戻る</button>
+            </div>
+        </form>
+    </article>
+</div>
 </body>
 </html>
