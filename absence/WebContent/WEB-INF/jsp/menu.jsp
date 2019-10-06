@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <title>メニュー</title>
 </head>
-<body>
+<body class="light-blue lighten-5">
 <%@include file="/WEB-INF/jsp/mypage.jsp" %>
 
 <div class="container p-0">
-    <article class="border rounded col-lg-6 col-md-8 col-sm-10 col-10 mr-auto ml-auto">
+    <article class="border rounded col-lg-6 col-md-8 col-sm-10 col-10 mr-auto ml-auto bg-white">
         <div class="col-8 text-center mr-auto ml-auto mt-4 mb-4">
             <form action="inputabsenceresist" method="get">
                 <button class="btn btn-primary" type="submit">新規作成</button>
@@ -25,14 +25,7 @@
     </article>
 </div>
 
-<!-- SCRIPTS -->
-<!-- JQuery -->
-<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="js/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="js/mdb.min.js"></script>
+<%@include file="/WEB-INF/jsp/script.jsp"%>
+
 </body>
 </html>

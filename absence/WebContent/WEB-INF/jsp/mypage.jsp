@@ -19,25 +19,15 @@
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/mypage.css" rel="stylesheet">
 </head>
 <body>
-<header class="w-100 sticky pt-2 pb-1 pl-3 pr-3 mb-5 z-depth-1 blue-gradient text-white">
-    <h2>マイページ</h2>
-    <p class="m-0"><%=name%>さん</p>
-    <form action="logout" method="get" class="mt-n5 text-right">
-        <button class="btn btn-blue-grey" type="submit">ログアウト</button>
+<header class="w-100 p-1 mb-5 z-depth-1 blue-gradient header">
+    <a href="menu"><img src="img/absence.png" alt="公欠管理システムアイコン"></a>
+    <p class="ml-2"><%=name%>さん</p>
+    <form action="logout" method="get" class="text-right">
+        <button class="btn btn-blue-grey logout" type="submit">ログアウト</button>
     </form>
 </header>
-
-<!-- SCRIPTS -->
-<!-- JQuery -->
-<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="js/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="js/mdb.min.js"></script>
 </body>
 </html>
