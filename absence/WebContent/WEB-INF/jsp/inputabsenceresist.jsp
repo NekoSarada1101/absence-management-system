@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%
+    String date = (String) request.getAttribute("date");
+%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>登録</title>
-    <link rel="stylesheet" href="css/resist.css">
 </head>
 <body class="light-blue lighten-5">
 <%@include file="/WEB-INF/jsp/mypage.jsp" %>
@@ -16,7 +18,7 @@
 
         <form action="confirmabsenceresist" method="post">
             <div class="md-form col-8 mr-auto ml-auto p-0">
-                <input type="date" value="2019-01-01" id="form3" class="form-control" name="date" autofocus required>
+                <input type="date" value="<%=date%>" id="form3" class="form-control" name="date" autofocus required>
                 <label for="form3">公欠年月日</label>
             </div>
 
@@ -30,7 +32,7 @@
                 <label for="form5">理由</label>
             </div>
 
-            <div class="col-9 mr-auto ml-auto mb-1 text-center">
+            <div class="col-9 mr-auto ml-auto mb-4 text-center">
                 <button class="btn btn-primary" type="submit">登録</button>
             </div>
         </form>
@@ -43,7 +45,7 @@
     </article>
 </div>
 
-<%@include file="/WEB-INF/jsp/script.jsp"%>
+<%@include file="/WEB-INF/jsp/script.jsp" %>
 
 </body>
 </html>

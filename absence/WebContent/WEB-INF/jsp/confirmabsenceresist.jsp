@@ -9,7 +9,6 @@
 <head>
     <meta charset="UTF-8">
     <title>登録確認</title>
-    <link rel="stylesheet" href="css/resist.css">
 </head>
 <body class="light-blue lighten-5">
 <%@include file="/WEB-INF/jsp/mypage.jsp" %>
@@ -37,7 +36,7 @@
         </table>
 
         <form action="insertabsenceresist" method="get">
-            <div class="col-9 mr-auto ml-auto mb-1 text-center">
+            <div class="col-9 mr-auto ml-auto mb-4 text-center">
                 <button class="btn btn-primary" type="submit">登録する</button>
             </div>
         </form>

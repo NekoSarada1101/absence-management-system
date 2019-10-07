@@ -22,7 +22,7 @@
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="css/mypage.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body class="light-blue lighten-5">
 <header class="w-100 p-1 mb-5 z-depth-1 blue-gradient text-white">
@@ -46,14 +46,14 @@
                 </p>
             </div>
 
-            <div class="col-8 text-center mr-auto ml-auto mb-4">
+            <div class="text-center mr-auto ml-auto mb-4">
                 <button class="btn btn-primary" type="submit">ログイン</button>
             </div>
         </form>
     </article>
 </div>
 
-<%@include file="/WEB-INF/jsp/script.jsp"%>
+<%@include file="/WEB-INF/jsp/script.jsp" %>
 
 </body>
 </html>

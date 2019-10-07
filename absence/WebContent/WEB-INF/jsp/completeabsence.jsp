@@ -15,7 +15,7 @@
         <p class="text-center mb-5">公欠届を提出しました</p>
 
         <form action="menu" method="get">
-            <div class="mr-auto ml-auto mb-1 text-center">
+            <div class="mr-auto ml-auto mb-4 text-center">
                 <button class="btn btn-primary" type="submit">戻る</button>
             </div>
         </form>
