@@ -20,13 +20,10 @@ public class InsertAbsenceResistServlet extends HttpServlet {
         AbsenceBeans absenceBeans = new AbsenceBeans();
 
         HttpSession session = request.getSession();
-        absenceBeans.setUserId(((AbsenceBeans) session.getAttribute("absenceBeans")).getUserId());
-        absenceBeans.setAbsenceDate(((AbsenceBeans) session.getAttribute("absenceBeans")).getAbsenceDate());
-        absenceBeans.setCompanyName(((AbsenceBeans) session.getAttribute("absenceBeans")).getCompanyName());
-        absenceBeans.setReason(((AbsenceBeans) session.getAttribute("absenceBeans")).getReason());
+        absenceBeans = (AbsenceBeans)session.getAttribute("absenceBeans");
 
         AbsenceDao absenceDao = new AbsenceDao();
-        boolean success = absenceDao.insert(absenceBeans);
+        absenceDao.insert(absenceBeans);
 
         session.removeAttribute("absenceBeans");
         response.sendRedirect("completeabsenceresist");

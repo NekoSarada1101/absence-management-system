@@ -40,7 +40,7 @@
             </div>
 
             <div class="md-form col-8 mr-auto ml-auto p-0">
-                <input type="password" id="form2" class="form-control" name="password" required>
+                <input type="password" id="form2" class="form-control" maxlength="128" name="password" required>
                 <label for="form2">パスワード</label>
                 <p class="mt-4 mb-5 text-danger"><%=error %>
                 </p>

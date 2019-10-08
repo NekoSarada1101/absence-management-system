@@ -46,7 +46,7 @@ public class AbsenceDao extends DaoBase {
         return list;
     }
 
-    public boolean insert(AbsenceBeans absenceBeans) {
+    public void insert(AbsenceBeans absenceBeans) {
         PreparedStatement stmt = null;
 
         try {
@@ -60,7 +60,6 @@ public class AbsenceDao extends DaoBase {
 
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         } finally {
             try {
                 this.close();
@@ -68,6 +67,5 @@ public class AbsenceDao extends DaoBase {
                 e.printStackTrace();
             }
         }
-        return true;
     }
 }

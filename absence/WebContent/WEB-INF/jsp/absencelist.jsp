@@ -16,7 +16,7 @@
 <%@include file="/WEB-INF/jsp/mypage.jsp" %>
 
 <div class="container p-0">
-    <article class="border rounded col-lg-6 col-md-8 col-sm-10 col-10 mr-auto ml-auto bg-white">
+    <article class="border rounded col-12 mr-auto ml-auto bg-white">
         <h4 class="text-center mt-4 mb-4">履歴</h4>
 
         <div id="table">

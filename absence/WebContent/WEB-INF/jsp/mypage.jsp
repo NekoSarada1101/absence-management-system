@@ -22,7 +22,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<header class="w-100 p-1 mb-5 z-depth-1 blue-gradient header">
+<header class="w-100 p-1 mb-5 z-depth-1 blue-gradient header sticky-top">
     <a href="menu"><img src="img/absence.png" alt="公欠管理システムアイコン"></a>
     <p class="ml-2"><%=name%>さん</p>
     <form action="logout" method="get" class="text-right">
