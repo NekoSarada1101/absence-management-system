@@ -6,6 +6,7 @@
 <%
     List<AbsenceBeans> list = (ArrayList<AbsenceBeans>) session.getAttribute("list");
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +31,8 @@
                 </tr>
                 </thead>
                 <tbody class="list">
+
+                <%--履歴データを表示--%>
                 <%for (AbsenceBeans bean : list) {%>
                 <tr class="row">
                     <td class="date col-3"><%=bean.getAbsenceDate()%>
@@ -40,6 +43,7 @@
                     </td>
                 </tr>
                 <%}%>
+
                 </tbody>
             </table>
         </div>

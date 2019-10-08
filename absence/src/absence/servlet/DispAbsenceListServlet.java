@@ -23,6 +23,7 @@ public class DispAbsenceListServlet extends HttpServlet {
 
         AbsenceDao absenceDao = new AbsenceDao();
 
+        //公欠リストを取得
         List<AbsenceBeans> list = absenceDao.getList(userId);
 
         session.setAttribute("list", list);

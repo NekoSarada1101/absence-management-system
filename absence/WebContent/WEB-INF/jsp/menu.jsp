@@ -19,13 +19,14 @@
 
         <div class="text-center mr-auto ml-auto mb-4">
             <form action="dispabsencelist" method="post">
-                <button class="col-xl-5 col-md-7 col-8 btn btn-outline-success waves-effect" type="submit">公欠履歴表示</button>
+                <button class="col-xl-5 col-md-7 col-8 btn btn-outline-success waves-effect" type="submit">公欠履歴表示
+                </button>
             </form>
         </div>
     </article>
 </div>
 
-<%@include file="/WEB-INF/jsp/script.jsp"%>
+<%@include file="/WEB-INF/jsp/script.jsp" %>
 
 </body>
 </html>

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AbsenceDao extends DaoBase {
+    //履歴取得
     public List<AbsenceBeans> getList(String userId) {
         AbsenceBeans absenceBeans = null;
         PreparedStatement stmt = null;
@@ -46,6 +47,7 @@ public class AbsenceDao extends DaoBase {
         return list;
     }
 
+    //データベース登録
     public void insert(AbsenceBeans absenceBeans) {
         PreparedStatement stmt = null;
 

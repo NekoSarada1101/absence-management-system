@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDao extends DaoBase {
+    //ログイン処理
     public LoginInfoBeans getby(String userId, String password) {
         LoginInfoBeans loginInfo = null;
         PreparedStatement stmt = null;

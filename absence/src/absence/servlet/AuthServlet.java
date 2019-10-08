@@ -1,7 +1,7 @@
-
 package absence.servlet;
 
-import java.io.IOException;
+import absence.beans.LoginInfoBeans;
+import absence.dao.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import absence.beans.LoginInfoBeans;
-import absence.dao.UserDao;
+import java.io.IOException;
 
 @WebServlet("/auth")
 public class AuthServlet extends HttpServlet {
@@ -21,14 +19,15 @@ public class AuthServlet extends HttpServlet {
         String studentId = request.getParameter("id");
         String password = request.getParameter("password");
 
+        //ログイン処理
         UserDao userDao = new UserDao();
         LoginInfoBeans loginInfo = userDao.getby(studentId, password);
 
         HttpSession session = request.getSession();
-        if (loginInfo != null) {
+        if (loginInfo != null) {    //ログイン成功→メニュー画面
             session.setAttribute("loginInfo", loginInfo);
             response.sendRedirect("menu");
-        } else {
+        } else {                    //失敗→ログイン画面
             session.setAttribute("error", "学籍番号またはパスワードが間違っています");
             response.sendRedirect("login");
         }

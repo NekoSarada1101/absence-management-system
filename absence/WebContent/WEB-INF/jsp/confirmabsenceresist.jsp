@@ -4,6 +4,7 @@
 <%
     AbsenceBeans absenceBeans = (AbsenceBeans) session.getAttribute("absenceBeans");
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +18,7 @@
     <article class="border rounded col-lg-6 col-md-8 col-sm-10 col-10 mr-auto ml-auto bg-white">
         <h4 class="text-center mt-4 mb-4">公欠登録確認</h4>
         <p class="text-center">以下の情報で登録しますか？</p>
+
         <table class="col-10 mr-auto ml-auto table">
             <tr class="row">
                 <th class="col-3">公欠日</th>
