@@ -51,7 +51,7 @@
                                 </button>
                             </div>
                         </form>
-                        <form method="post" name="form1" action="delete">
+                        <form method="post" name="form1" action="confirmdelete">
                             <input type="hidden" name="deleteAbsence" value="<%=i%>">
                             <div class="text-center mt-2">
                                 <a class="text-danger" href="javascript:form1[<%=i%>].submit()">削除</a>

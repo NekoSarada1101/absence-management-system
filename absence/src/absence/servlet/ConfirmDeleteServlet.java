@@ -9,26 +9,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/confirmdelete")
-public class ConfirmDelete extends HttpServlet {
+public class ConfirmDeleteServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
-        int absenceID = ((AbsenceBeans) session.getAttribute("absenceBeans")).getAbsenceId();
+        List<AbsenceBeans> list = (ArrayList<AbsenceBeans>) session.getAttribute("list");
 
-        String date = request.getParameter("date");
-        String companyName = request.getParameter("name");
-        String reason = request.getParameter("reason");
+        int i = Integer.parseInt(request.getParameter("deleteAbsence"));
 
         AbsenceBeans absenceBeans = new AbsenceBeans();
-        absenceBeans.setAbsenceId(absenceID);
-        absenceBeans.setAbsenceDate(date);
-        absenceBeans.setCompanyName(companyName);
-        absenceBeans.setReason(reason);
+        absenceBeans = list.get(i);
 
-        session.setAttribute("deleteAbsenceBeans", absenceBeans);
+        session.setAttribute("absenceBeans", absenceBeans);
         request.getRequestDispatcher("WEB-INF/jsp/confirmdelete.jsp").forward(request, response);
     }
 }

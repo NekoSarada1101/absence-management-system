@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/completemodify")
-public class CompleteModify extends HttpServlet {
+@WebServlet("/completedelete")
+public class CompleteDeleteServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.getRequestDispatcher("WEB-INF/jsp/completemodify.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/jsp/completedelete.jsp").forward(request, response);
     }
 }

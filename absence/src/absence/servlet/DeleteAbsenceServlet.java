@@ -11,19 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/updatemodify")
-public class UpdateModify extends HttpServlet {
+@WebServlet("/deleteabsence")
+public class DeleteAbsenceServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
-        AbsenceBeans modifyBeans = (AbsenceBeans) session.getAttribute("modifyAbsenceBeans");
+        AbsenceBeans deleteBeans = (AbsenceBeans) session.getAttribute("absenceBeans");
 
         AbsenceDao absenceDao = new AbsenceDao();
-        absenceDao.update(modifyBeans);
+        absenceDao.delete(deleteBeans);
 
-        session.removeAttribute("modifyBeans");
+        session.removeAttribute("deleteBeans");
         session.removeAttribute("absenceBeans");
-        response.sendRedirect("completemodify");
+        response.sendRedirect("completedelete");
     }
 }

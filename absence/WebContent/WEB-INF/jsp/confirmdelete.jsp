@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%
-    AbsenceBeans deleteBeans = (AbsenceBeans) session.getAttribute("deleteAbsenceBeans");
+    AbsenceBeans deleteBeans = (AbsenceBeans) session.getAttribute("absenceBeans");
 %>
 
 <!DOCTYPE html>

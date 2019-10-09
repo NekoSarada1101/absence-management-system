@@ -37,7 +37,7 @@
             </tr>
         </table>
 
-        <form action="updatemodify" method="get">
+        <form action="updateabsence" method="get">
             <div class="col-9 mr-auto ml-auto mb-4 text-center">
                 <button class="btn btn-primary" type="submit">修正する</button>
             </div>

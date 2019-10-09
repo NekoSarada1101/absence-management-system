@@ -1,13 +1,13 @@
 
 package absence.dao;
 
+import absence.beans.AbsenceBeans;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import absence.beans.AbsenceBeans;
 
 public class AbsenceDao extends DaoBase {
     //履歴取得
@@ -48,7 +48,7 @@ public class AbsenceDao extends DaoBase {
         return list;
     }
 
-    //データベース登録
+    //データ登録
     public void insert(AbsenceBeans absenceBeans) {
         PreparedStatement stmt = null;
 
@@ -72,7 +72,7 @@ public class AbsenceDao extends DaoBase {
         }
     }
 
-    //データベース更新
+    //データ更新
     public void update(AbsenceBeans modifyBeans) {
         PreparedStatement stmt = null;
 
@@ -83,6 +83,27 @@ public class AbsenceDao extends DaoBase {
             stmt.setString(2, modifyBeans.getCompanyName());
             stmt.setString(3, modifyBeans.getReason());
             stmt.setInt(4, modifyBeans.getAbsenceId());
+            stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                this.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    //データ削除
+    public void delete(AbsenceBeans absenceBeans) {
+        PreparedStatement stmt = null;
+
+        try {
+            this.connect();
+            stmt = con.prepareStatement("DELETE FROM absences WHERE absence_id = ?");
+            stmt.setInt(1, absenceBeans.getAbsenceId());
             stmt.executeUpdate();
 
         } catch (SQLException e) {
