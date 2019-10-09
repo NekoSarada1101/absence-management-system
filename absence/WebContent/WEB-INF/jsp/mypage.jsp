@@ -26,7 +26,7 @@
     <a href="menu"><img src="img/absence.png" alt="公欠管理システムアイコン"></a>
     <p class="ml-2"><%=name%>さん</p>
     <form action="logout" method="get" class="text-right">
-        <button class="btn btn-blue-grey logout" type="submit">ログアウト</button>
+        <button class="btn btn-blue-grey p-2 logout" type="submit">ログアウト</button>
     </form>
 </header>
 </body>

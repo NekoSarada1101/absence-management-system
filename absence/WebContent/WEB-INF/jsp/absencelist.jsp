@@ -50,7 +50,7 @@
 
         <form action="menu" method="get" class="text-right mr-1 mb-4">
             <div>
-                <button class="btn btn-outline-warning waves-effect" type="submit">戻る</button>
+                <button class="btn btn-outline-secondary waves-effect" type="submit">戻る</button>
             </div>
         </form>
     </article>

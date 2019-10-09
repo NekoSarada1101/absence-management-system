@@ -18,8 +18,15 @@
         </div>
 
         <div class="text-center mr-auto ml-auto mb-4">
+            <form action="modifyordelete" method="get">
+                <button class="col-xl-5 col-md-7 col-8 btn btn-info" type="submit">修正・削除
+                </button>
+            </form>
+        </div>
+
+        <div class="text-center mr-auto ml-auto mb-4">
             <form action="dispabsencelist" method="post">
-                <button class="col-xl-5 col-md-7 col-8 btn btn-outline-success waves-effect" type="submit">公欠履歴表示
+                <button class="col-xl-5 col-md-7 col-8 btn btn-success" type="submit">公欠履歴表示
                 </button>
             </form>
         </div>

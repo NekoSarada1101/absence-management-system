@@ -3,10 +3,19 @@ package absence.beans;
 import java.io.Serializable;
 
 public class AbsenceBeans implements Serializable {
+    private int absenceId = 0;
     private String userId = null;
     private String absenceDate = null;
     private String companyName = null;
     private String reason = null;
+
+    public int getAbsenceId() {
+        return absenceId;
+    }
+
+    public void setAbsenceId(int absenceId) {
+        this.absenceId = absenceId;
+    }
 
     public AbsenceBeans() {
     }
