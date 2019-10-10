@@ -19,6 +19,7 @@ public class DeleteAbsenceServlet extends HttpServlet {
         HttpSession session = request.getSession();
         AbsenceBeans deleteBeans = (AbsenceBeans) session.getAttribute("absenceBeans");
 
+        //削除処理
         AbsenceDao absenceDao = new AbsenceDao();
         absenceDao.delete(deleteBeans);
 

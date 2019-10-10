@@ -23,6 +23,7 @@ public class InputModifyServlet extends HttpServlet {
 
         int i = Integer.parseInt(request.getParameter("modifyAbsence"));
 
+        //選択された公欠情報取得
         AbsenceBeans absenceBeans = new AbsenceBeans();
         absenceBeans = list.get(i);
 

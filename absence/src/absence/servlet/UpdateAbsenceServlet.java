@@ -19,6 +19,7 @@ public class UpdateAbsenceServlet extends HttpServlet {
         HttpSession session = request.getSession();
         AbsenceBeans modifyBeans = (AbsenceBeans) session.getAttribute("modifyAbsenceBeans");
 
+        //更新処理
         AbsenceDao absenceDao = new AbsenceDao();
         absenceDao.update(modifyBeans);
 

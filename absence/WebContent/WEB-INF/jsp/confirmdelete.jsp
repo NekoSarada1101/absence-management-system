@@ -43,7 +43,7 @@
             </div>
         </form>
 
-        <form action="modify" method="get" class="float-right back">
+        <form action="modifyordelete" method="get" class="float-right back">
             <div>
                 <button class="btn btn-outline-secondary waves-effect" type="submit">戻る</button>
             </div>

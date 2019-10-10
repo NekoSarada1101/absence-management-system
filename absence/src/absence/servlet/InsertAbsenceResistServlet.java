@@ -20,6 +20,7 @@ public class InsertAbsenceResistServlet extends HttpServlet {
         HttpSession session = request.getSession();
         AbsenceBeans absenceBeans = (AbsenceBeans) session.getAttribute("absenceBeans");
 
+        //登録処理
         AbsenceDao absenceDao = new AbsenceDao();
         absenceDao.insert(absenceBeans);
 

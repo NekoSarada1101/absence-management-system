@@ -22,6 +22,7 @@ public class ConfirmDeleteServlet extends HttpServlet {
 
         int i = Integer.parseInt(request.getParameter("deleteAbsence"));
 
+        //選択された公欠情報取得
         AbsenceBeans absenceBeans = new AbsenceBeans();
         absenceBeans = list.get(i);
 
