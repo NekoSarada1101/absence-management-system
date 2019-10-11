@@ -18,7 +18,7 @@
         </div>
 
         <div class="text-center mr-auto ml-auto mb-4">
-            <form action="modifyordelete" method="get">
+            <form action="modifyordelete" method="post">
                 <button class="col-xl-5 col-md-7 col-8 btn btn-info" type="submit">修正・削除
                 </button>
             </form>

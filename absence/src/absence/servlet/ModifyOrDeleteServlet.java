@@ -17,7 +17,7 @@ import java.util.List;
 public class ModifyOrDeleteServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
         String userId = ((LoginInfoBeans) session.getAttribute("loginInfo")).getUserId();
 
